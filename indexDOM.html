@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script defer src="clonarElemDOM.js"></script>
+
+  <title>JavaScript Course</title>
+</head>
+<body>
+<header id="header" class="border-grey">
+  <h1>my Web/Blog para pruebas con el DOM</h1>
+</header>
+
+<nav class="border-grey">
+  <ul>
+    <li><a href="#">LINK 1</a></li>
+    <li><a href="#">LINK 2</a></li>
+    <li><a href="#">LINK 3</a></li>
+  </ul>
+</nav>
+
+<!-- Escribir cualquier cosa -->
+<main id="main">
+  <!-- BeforeBegin / Hermano Superior -->
+  <section id="section" class="border-grey" nombre="mercadeo">
+    <!-- AfterBegin / Primer Hijo -->
+    <h2>Titulo de la Seccion</h2>
+
+    <article class='border-gray'>
+      <h3>Titulo del Articulo</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        A accusamus accusantium adipisci assumenda, at cum cumque
+        ducimus eius error laborum minus molestias mollitia
+        officia omnis quo reiciendis saepe sequi sunt.</p>
+    </article>
+    <!-- BeforeEnd / Ultimo Hijo -->
+  </section>
+  <!-- AfterEnd / Hermano Inferior -->
+</main>
+
+<footer class="border-gray">
+  <p>2023 JavaScript Modificando el DOM</p>
+</footer>
+
+</body>
+</html>
