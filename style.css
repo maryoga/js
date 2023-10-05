@@ -30,3 +30,79 @@ h2,
 h3{
     margin-left: 5px;
 }
+
+.slider {
+    display: flex;
+
+    width: 500px;
+    aspect-ratio: 16/9;
+
+    scroll-snap-type: x mandatory;
+
+    overflow-x: scroll;
+}
+
+.slider img {
+    flex: 0 0 100%;
+    width: 100%;
+    object-fit: cover;
+
+    scroll-snap-align: center;
+}
+
+/* navegar de una pag a otra pag */
+.home .gallery img{
+    view-transition-name: photo-mustang;
+}
+
+.detail .mustang img {
+    view-transition-name: photo-mustang;
+}
+
+/* Trabajando con la barra de progreso */
+
+html {
+    scroll-timeline: --page-scroll block;
+}
+
+@keyframes grow-progress { /* animación */
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+#progress { /* barra de progreso */
+    transform-origin: 0 50%;
+    animation: grow-progress auto linear;
+    animation-timeline: --page-scroll;
+}
+
+/* Animación de imagenes */
+@keyframes reveal {
+    from { opacity: 0; clip-path: inset(0% 60% 0% 50%); }
+    to { opacity: 1; clip-path: inset(0% 0% 0% 0%); }
+}
+
+.revealing-image {
+    animation: auto linear reveal both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 50%;
+}
+
+/* Stacking Cards - 15 líneas */
+
+.card {
+    animation: empty linear forwards;
+    animation-timeline: --card;
+    view-timeline: --card inline;
+
+    &h2{
+        animation: clip-in linear backwards, clip-out linear forwards;
+        animation-timeline: --card;
+        animation-range: entry 50% entry 100%, exit 0% exit 50%;
+    }
+    & footer {
+        animation: fade-in linear both, fade-out linear both;
+        animation-timeline: --card;
+        animation-range: cover 40% cover 50%, cover 50% cover 60%;
+    }
+}

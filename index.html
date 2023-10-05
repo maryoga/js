@@ -1,48 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script defer src="noSwitchOptimizado.js"></script> -->
-    <script defer src="index.js"></script>
-    <title>JavaScript Course</title>
+    <title>Document</title>
 </head>
 <body>
-<header id="header" class="border-grey">
-    <h1>my Web/Blog para pruebas con el DOM</h1>
-</header>
+    <label>
+        !Busca tu Avenger!
+        <input
+        list="superheroes"
+        id="superhero-input"
+        name="superhero"
+        placeholder="Escribe el nombre...">
+    </label>
 
-<nav class="border-grey">
-    <ul>
-        <li><a href="#">LINK 1</a></li>
-        <li><a href="#">LINK 2</a></li>
-        <li><a href="#">LINK 3</a></li>
-    </ul>
-</nav>
+    <datalist id="superheroes">
+        <option value="Iron Man">
+        <option value="Scarlet Witch">
+        <option value="Spider-Man">
+        <option value="Black Widow">
+        <option value="Hulk">
+        <option value="Captain Marvel">
+        <option value="Thor">
+        <option value="Captain America">
+    </datalist>
 
-<!-- clonar elementos del DOM -->
-<main id="main">
-    <!-- beforebegin -->
-    <section id="seccion" class="border-grey">
-        <h2 id="titulo2">Titulo de la Sección</h2>
+    <hr>
+    <label for="meeting-time">Selecciona fecha: </label>
 
-        <form id='formulario' class='border-grey register-form'>
-            <input type="text" name='name' placeholder="Nombre">
-            <input type="text" name='email' placeholder="Email">
-            <input type="password" name='password' placeholder='Contraseña'>
-            <button>Registrarme</button>
-        </form>
-    </section>
+    <input
+        type="datetime-local" id="meeting-time"
+        name="meeting-time" value="2023-06-12T19:30"
+        min="2023-06-07T00:00" max="2023-06-14T00:00"
+    >
 
-    <section class="border-grey">
-        <h2>Blog</h2>
-        <article class='border-gray'>
-            <h3>Titulo del Articulo</h3>
-            <p>Lorem ipsum.</p>
-            <button id="btn">boton</button>
-        </article>
-    </section>
-</main>
+    <hr>
+
+    <select name="select">
+        <option value="havanna">Havana</option>
+        <option value="cachafaz" selected>Cachafaz</option>
+        <option value="guaymallen">Guaymallen</option>
+    </select>
 
 </body>
 </html>
